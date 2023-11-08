@@ -68,5 +68,4 @@ module.exports.deleteuser = async (req, res) => {
 
 
 
-
 // module.exports = { loginUser, signupUser, getUserByEmail };

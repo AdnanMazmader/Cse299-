@@ -6,7 +6,8 @@ const {
     getBooks,
     getBook,
     deleteBook,
-    updateBook
+    updateBook,
+    getBookbyTitle
 } = require('../controllers/bookcontroller')
 
 //get all books
@@ -24,5 +25,6 @@ router.delete('/:id', deleteBook)
 //update a book
 router.get('/:id', updateBook)
 
+router.get('/getTitle/:title', getBookbyTitle)
 
 module.exports = router  

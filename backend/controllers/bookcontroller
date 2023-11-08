@@ -71,10 +71,21 @@ const updateBook = async (req, res) => {
     }
 };
 
+const getBookbyTitle = async (req, res) => {
+    const { title } = req.params
+
+    const book = await Book.findOne({ title: title })
+    if (!book) {
+        return res.status(400).json({ error: 'no such book' })
+    }
+    res.status(200).json(book)
+}
+
 module.exports = {
     createBook,
     getBooks,
     getBook,
     deleteBook,
-    updateBook
+    updateBook,
+    getBookbyTitle
 }
